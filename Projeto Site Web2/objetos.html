@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myCss.css">
+
+    <title>Objetos</title>
+</head>
+
+<body>
+    <div class="geral">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="index.html"><img src="img/javascript-logo.png" width="60" height="30" class="d-inline-block align-top">JavaScript</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" a>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="funcoes.html">Funções</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Objetos</a>
+                        </li>
+                        <li class="nav-item active">
+								<a class="nav-link" href="jquery.html">Extra</a>
+						</li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <main>
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-12 col-md-12">
+                        <div class="jumbotron text-center  bg-primary">
+                            <h1 class="display-3 ">Objetos</h1>
+                            <p class="lead "> Um objeto é um tipo especial de variável que contém propriedades e métodos.<br>A criação de objetos (classes) em Javascript se da por meio de uma função construtora ou notação literal. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-3 ">
+                        <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link" id="div-objeto-construtor-tab" data-toggle="pill" href="#div-objeto-construtor" role="tab">Declaração Objeto</a>
+
+                            <a class="nav-link" id="div-array-tab" data-toggle="pill" href="#div-array" role="tab">Array</a>
+                            <a class="nav-link" id="div-string-tab" data-toggle="pill" href="#div-string" role="tab">String</a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-9">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade" id="div-objeto-construtor" role="tabpanel">
+                                <h2> Função Contrutora</h2>
+                                <p class="text-justify">Nessa forma de declaração, o nome da função deve ser inicado com letra maiúscula.</p>
+                                <pre><span class="spanVar">var </span>Pessoa = <span class="spanFunction">function</span> (nome, sobrenome, email) {
+	'use strict';
+	<span class="spanFunction">this</span>.nome = nome;
+	<span class="spanFunction">this</span>.sobrenome = sobrenome;
+	<span class="spanFunction">this</span>.email = email;
+	<span class="spanFunction">this</span>.imprime = 'Nome da pessoa: ' +<span class="spanFunction">this</span>.nome + '<br>Sobrenome: ' + <span class="spanFunction">this</span>.sobrenome + '<br>Email: ' + <span class="spanFunction">this</span>.email;
+};
+<span class="spanVar">var</span> pessoa = <span class="spanFunction">new</span> Pessoa('João', 'Souza', 'joão_123@gmail.com');</pre>
+                                <hr>
+                                <pre class="bg-success" id='resultado-func-contrutora'></pre>
+                                <hr>
+                                <h2>Notação Literal</h2>
+                                <pre><span class="spanVar">var</span> pai = {
+nome: 'Pedro',
+sobrenome: 'Pato',
+email: 'pedro_pato@gmail.com',
+imprime: <span class="spanFunction">function</span> () {
+	'use strict';
+<span class="spanFunction">return</span> 'Nome da pessoa: ' + <span class="spanFunction">this</span>.nome + '<br>Sobrenome: ' + <span class="spanFunction">this</span>.sobrenome + '<br>Email: ' + <span class="spanFunction">this</span>.email;
+	}
+};
+
+<span class="spanVar">var</span> filho = Object.<span class="spanVar">create</span>(pai);
+filho.nome = 'Augusto';
+filho.email = 'augustopato123@gmail.com';
+filho.imprime();</pre>
+                                <pre class="bg-success" id='resultado-func-literal'></pre>
+                            </div>
+
+
+
+                            <div class="tab-pane fade" id="div-array" role="tabpanel">
+                                <h2>Array</h2>
+                                <p class="text-justify">Array é uma lista indexada de elementos, a qual é possível armazenar mais de um elemento.<br>A criação de um array em javascript se da pela notação 'var vetor = []' ou 'var vetor = new Array()'.</p>
+                                <pre><span class="spanVar">var</span> vetor = [];
+<span class="spanVar">var</span> imprimeVetor = <span class="spanFunction">function</span> () {
+	vetor.<span class="spanVar">push</span>($('select').value);
+	$('#pre-resultado-array').<span class="spanVar">innerHTML</span> += vetor[i] ;
+	i++;
+};
+$('#bt-add-vetor').<span class="spanVar">onclick</span> = imprimeVetor;</pre>
+                                <hr>
+
+                                <select class="form-control col-4">
+									<option value="Leite">Leite</option>
+									<option value="Pão">Pão</option>
+									<option value="Carne">Carne</option>
+									<option value="Nescau">Nescau</option>
+									<option value="Frutas">Frutas</option>
+									<option value="Legumes">Legumes</option>
+								</select>
+
+                                <button class="btn btn-dark" id='bt-add-vetor' type="button">Adcionar</button>
+                                <button class="btn btn-dark" id='bt-limpa-vetor'>Limpar</button>
+                                <pre class="bg-success" id='pre-resultado-array'></pre>
+
+                                <hr>
+                                <h2>Array de Objetos</h2>
+                                <p class="lead">Exemplo, preencha os campos do formulário e clique em cadastrar.</p>
+                                <pre><span class="spanVar">var</span> ALUNOS = [];
+<span class="spanVar">var</span> DISCIPLINAS = [];
+
+<span class="spanFunction">function</span> Aluno(ra, nome) {
+	<span class="spanFunction">this</span>.ra = ra;
+	<span class="spanFunction">this</span>.nome = nome;
+	<span class="spanFunction">this</span>.diciplinas = [];
+}
+
+<span class="spanVar">var</span> disciplina = {
+	nome: ''
+};
+$('#bt-adicionar-disciplina').<span class="spanVar">addEventListener</span>('click', <span class="spanFunction">function</span> () {
+
+	<span class="spanVar">var</span> materia = Object.<span class="spanVar">create</span>(disciplina);
+	materia.nome = <span class="spanVar">document</span>.<span class="spanVar">forms</span>[0].<span class="spanVar">elements</span>[2].value;
+	document.<span class="spanVar">forms</span>[0].<span class="spanVar">elements</span>[2].value = '';
+	DISCIPLINAS.<span class="spanVar">push</span>(materia);
+});
+$('#bt-cadastrar-aluno').<span class="spanVar">onclick</span> = <span class="spanFunction">function</span> () {
+
+	<span class="spanVar">var</span> aluno = <span class="spanFunction">new</span> Aluno(document.<span class="spanVar">forms</span>[0].<span class="spanVar">elements</span>[0].value, document.<span class="spanVar">forms</span>[0].<span class="spanVar">elements</span>[1].value);
+
+	for (i <span class="spanFunction">in</span> DICIPLINAS) {
+		aluno.<span class="spanVar">disciplina</span>.<span class="spanVar">push</span>(DISCIPLINAS[i]);
+	}
+	ALUNOS.<span class="spanVar">push</span>(aluno);
+}
+							</pre>
+                                <hr>
+
+                                <form>
+                                    <div class="form-group">
+                                        <p class="col-4">
+                                            <label for="input-ra">Ra</label>
+                                            <input class="form-control" type="text" id='input-ra' placeholder="Digite o RA do aluno" required></p>
+                                        <div class="div-ra  text-danger"></div>
+                                        <p class="col-4">
+                                            <label for="input-nome">Nome</label>
+                                            <input class="form-control" type="text" id='input-nome' placeholder="Digite o nome do aluno" required></p>
+                                        <div class="div-nome  text-danger"></div>
+                                        <p class="col-4">
+                                            <label for="input-disciplina">Disciplina</label>
+                                            <input class="form-control" type="text" id='input-disciplina' placeholder="Digite a disciplina">
+                                            <button class='btn btn-dark' type='button' id='bt-adicionar-disciplina'>Adicionar Disciplina</button></p>
+                                        <p><button class='btn btn-dark' id='bt-cadastrar-aluno' type="reset">Cadastrar</button></p>
+                                    </div>
+                                </form>
+                                <ul class="list-group" id='ul-resultado-objetoArray'></ul>
+                            </div>
+
+                            <div class="tab-pane fade" id="div-string" role="tabpanel">
+                                <h2>String</h2>
+                                <p class="text-justify">O objeto global String é um construtor para strings, ou uma sequência de caracteres.<br> Strings são úteis para guardar dados que podem ser representados em forma de texto. </p>
+                                <pre>
+<span class="spanVar">var</span> stringToUpper = <span class="spanFunction">function</span> stringToUpper(){	
+	<span class="spanVar">let</span> palavra = document.getElementById('input-palavra').<span class="spanVar">value</span>;
+	palavra = palavra.<span class="spanVar">toUpperCase</span>();
+										
+	sessionStorage.<span class="spanVar">setItem</span>('palavraUpper',palavra);
+										
+	document.<span class="spanVar">getElementById</span>('input-palavra').<span class="spanVar">value</span> = '';
+										
+}
+										
+<span class="spanVar">var</span> stringToLower = <span class="spanFunction">function</span> (){
+	<span class="spanVar">let</span> palavra = document.<span class="spanVar">getElementById</span>.('input-palavra').<span class="spanVar">value</span>;
+	palavra = palavra.<span class="spanVar">toLowerCase</span>();
+										
+	sessionStorage.<span class="spanVar">setItem</span>('palavraLower',palavra);
+										
+	document.<span class="spanVar">getElementById</span>('input-palavra').<span class="spanVar">value</span> = '';
+}
+										
+<span class="spanVar">var</span> visualizarUpper = <span class="spanFunction">function</span> (){
+	<span class="spanFunction">return</span> document.<span class="spanVar">getElementById</span>('resultado-stringUpper').<span class="spanVar">value</span>  =  sessionStorage.<span class="spanVar">getItem</span>('palavraUpper');
+}
+										
+<span class="spanVar">var</span> visualizarLower = <span class="spanFunction">function</span> (){
+		<span class="spanFunction">return</span> document.<span class="spanVar">getElementById</span>('resultado-stringLower').<span class="spanVar">value</span>  = sessionStorage.<span class="spanVar">getItem</span>('palavraLower');
+}
+
+
+								</pre>
+
+
+                                <p class="lead">No exemplo abaixo escolha a forma como deseja armazenar a sua String</p>
+                                <div class="form-group">
+                                    <input id="input-palavra" class="form-control" placeholder="Digite alguma coisa">
+                                    <p>
+                                        <button type="button" onclick="return stringToLower()" class="btn btn-dark">Salvar String Minúscula</button>
+                                        <button type="button" onclick="return stringToUpper()" class="btn btn-dark">Salvar String Maiúscula</button>
+                                    </p>
+                                    <p>
+                                        <button type="button" onclick="return visualizarLower()" class="btn btn-dark">Visualizar String Minúscula</button>
+                                        <button type="button" onclick="return visualizarUpper()" class="btn btn-dark">Visualizar String Maiúscula</button>
+                                    </p>
+                                </div>
+
+                                <p>
+                                    Resultado String Maiúscula: <input type="text" class="form-control col-4" id='resultado-stringUpper'>
+                                </p>
+                                <p>
+                                    Resultado String Minúscula: <input type="text" class="form-control col-4" id='resultado-stringLower'>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+
+
+        <footer>
+            <div class="container-fluid text-right ">
+                <p class="text-muted "><small>Hythan Matheus Correia de Oliveira<br>© 2017</small></p>
+            </div>
+
+        </footer>
+    </div>
+
+
+
+
+
+    <script src="js/codes/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+    <script src="js/codes/objetoConstrutor.js "></script>
+    <script src='js/codes/objetoArray.js'></script>
+    <script src="js/codes/array.js"></script>
+    <script src="js/codes/string.js"></script>
+</body>
+
+</html>

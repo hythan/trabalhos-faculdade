@@ -1,0 +1,28 @@
+html,
+body {
+    height: 100%
+}
+
+.geral {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 90px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+pre {
+    display: block;
+}
+
+.spanFunction {
+    color: blue;
+}
+
+.spanVar {
+    color: darkmagenta;
+}
